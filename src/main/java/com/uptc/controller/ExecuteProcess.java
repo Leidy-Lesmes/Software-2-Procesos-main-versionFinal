@@ -16,7 +16,8 @@ public class ExecuteProcess {
 
     private final Queue<Process> processes;
     private final List<Process> allProcess;
-    private final List<Process> comunicateProcess; //Lista de procesos comunicados
+    private final List<Process> comunicateProcess;
+    private final List<Process> destroyProcess; //Lista de procesos comunicados
 
     private int timeProcess;   // cambia --
     private int timeCPU;       // lo que atiende la cpu
@@ -27,6 +28,7 @@ public class ExecuteProcess {
         this.processes = new LinkedList<>();
         this.allProcess = new LinkedList<>();
         this.comunicateProcess= new LinkedList<>();
+        this.destroyProcess= new LinkedList<>();
         timeProcess = 0;
         totalTime = 0;
     }
@@ -110,8 +112,9 @@ public class ExecuteProcess {
     private void destroyProcess(Process p,States actualState, States lastState) {
         if(p.getIsDestroy()){
             p.states(timeProcess, timeProcess, DESTROY, lastState);
-            for (int i = 0; i < allProcess.size(); i++) {
+           for (int i = 0; i < allProcess.size(); i++) {
                 if (allProcess.get(i).getName()==p.getName()) {
+                    this.destroyProcess.add(allProcess.get(i));
                     this.allProcess.remove(i);
                 }
             }
@@ -153,7 +156,7 @@ public class ExecuteProcess {
     }
 
     public ArrayList<Object[]> reportDestroyProcess() {
-        return report.getReportByDestroyProcess();
+        return report.getReportByDestroyProcess(destroyProcess);
     }
 
     public ArrayList<Object[]> reportLayOffProcess() {

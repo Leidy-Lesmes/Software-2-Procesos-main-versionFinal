@@ -34,7 +34,6 @@ public class ControllerApp implements ActionListener {
 			break;
 		case C_EXECUTE_PROCESS:
 			// Ejecutar lista de procesos
-			System.out.println("ENTRO A EJECUTAR");
 			executeProcess();
 			break;
 
@@ -57,7 +56,6 @@ public class ControllerApp implements ActionListener {
 			reportTable= new ReportDialog(jPrincipal,Constants.TOP_T_MENUITEM_REPORT3);
 			reportTable.assignHeaders(this,Constants.headersEstados,Constants.TOP_T_MENUITEM_REPORT3);
 			reportTable.cleanRowsTable();
-			System.out.println("controler"+Constants.headersEstados[0]);
 			reportTable.addElementToTable(reportByExitState());
 			jPrincipal.reportTableVisibility(true,reportTable);
 			break;
@@ -83,7 +81,7 @@ public class ControllerApp implements ActionListener {
 			case C_REPORT_BY_DESTROY_PROCESS:
 			// reporte por orden en el estado en bloqueo
 			reportTable= new ReportDialog(jPrincipal,Constants.TOP_T_MENUITEM_REPORT6);
-			reportTable.assignHeaders(this, Constants.headersEstados,Constants.TOP_T_MENUITEM_REPORT6);
+			reportTable.assignHeaders(this, Constants.headersDestruidos,Constants.TOP_T_MENUITEM_REPORT6);
 			reportTable.cleanRowsTable();
 			reportTable.addElementToTable(reportByDestroyProcess());
 			jPrincipal.reportTableVisibility(true,reportTable);

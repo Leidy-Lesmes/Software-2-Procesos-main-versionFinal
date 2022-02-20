@@ -63,13 +63,22 @@ public class Report {
     return aux;
     }
 
-    public ArrayList<Object[]> getReportByDestroyProcess() {
+    /*public ArrayList<Object[]> getReportByDestroyProcess() {
         ArrayList<Object[]> aux= new ArrayList<>();
-            registers.get(DESTROY).stream()
+                    registers.get(DESTROY).stream()
                     .sorted(Comparator.comparingInt(Register::getTimeEnd))
                     .map(x -> (aux.add(new String[]{ ""+x.getTimeEnd(),x.getProcess().getName(),""+x.getProcess().getNewPriority()})))
                     .forEach(System.out::print);
+                    System.out.println(aux.size());
     return aux;
+    }*/
+    public ArrayList<Object[]> getReportByDestroyProcess(List<Process> destroyProcess) {
+        ArrayList<Object[]> aux= new ArrayList<>();
+        destroyProcess.stream()
+            .sorted(Comparator.comparing(Process::getName))
+            .map(x -> (aux.add(new String[]{ ""+x.getName(),""+x.getNewPriority()})))
+            .forEach(System.out::print);
+            return aux;
     }
 
     public ArrayList<Object[]> getReportByLayOffProcess() {
