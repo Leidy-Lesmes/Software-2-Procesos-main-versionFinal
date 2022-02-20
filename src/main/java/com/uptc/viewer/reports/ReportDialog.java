@@ -120,6 +120,7 @@ public class ReportDialog extends JDialog {
 	} 
 
 	public void addElementToTable(ArrayList<Object[]> datasList){
+		System.out.println("tamaño lista"+datasList.size());
 		centerTable.addElementToTable(datasList);
 	}
 }

@@ -29,6 +29,7 @@ public class Constants {
 	public static final int DO_NOTHING_ON_CLOSE = 0;
 	
 	public static final String [] headersEstados = {"Tiempo", "Proceso", "Prioridad"};
+	public static final String [] headersDestruidos = {"Proceso", "Prioridad"};
 	public static final String [] headersR6 = {"Tiempo Inicial","Tiempo Final", "Proceso", "Prioridad"};
 	public static final String [] headersR7 = {"Transacciones entre estados"};
 	public static final String [] headersR8 = {"Proceso","Conectado con"};
