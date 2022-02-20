@@ -71,10 +71,10 @@ public class HeaderProcess extends JPanel  {
 		checkProcess.setBackground(Constants.COLOR_SET_DATA_PANEL);
 
 		nameProcess = new JTextField();
-		dataProcess.add(Utilities.textField(nameProcess, new Font("arial", Font.ITALIC, 15), "		", Color.GRAY, 150, 70));
+		dataProcess.add(Utilities.textField(nameProcess, new Font("arial", Font.ITALIC, 15), "", Color.GRAY, 210, 20));
 		
 		processTime= new JTextField();
-		dataProcess.add(Utilities.textField(processTime, new Font("arial", Font.ITALIC, 15), "		              ", Color.GRAY, 150, 70));
+		dataProcess.add(Utilities.textField(processTime, new Font("arial", Font.ITALIC, 15), "", Color.GRAY, 290, 20));
 		
 		newPriority = new JCheckBox();
 		newPriority.addActionListener(actionListener);
@@ -86,7 +86,7 @@ public class HeaderProcess extends JPanel  {
 		
 		priorityProcess = new JTextField();
 		this.changeStatusJtextfieldPriority();
-		dataProcess.add(Utilities.textField(priorityProcess, new Font("arial", Font.ITALIC, 15), "	5	", Color.GRAY, 150, 70));
+		dataProcess.add(Utilities.textField(priorityProcess, new Font("arial", Font.ITALIC, 15), "5", Color.GRAY, 150, 20));
 		
 		blockedProcess = new JCheckBox();
 		blockedProcess.setText("¿El proceso se bloqueara?");
@@ -115,13 +115,13 @@ public class HeaderProcess extends JPanel  {
 
 		nameProcessConection = new JTextField();
 		this.changeStatusJtextfieldConnect();
-		checkProcess.add(Utilities.textField(nameProcessConection, new Font("arial", Font.ITALIC, 15), "		", Color.GRAY, 150, 70));
+		checkProcess.add(Utilities.textField(nameProcessConection, new Font("arial", Font.ITALIC, 15), "", Color.GRAY, 150, 20));
 		
 
 		saveButton = new JButton();
 		saveButton.addActionListener(actionListener);
 		saveButton.setActionCommand(Commands.C_ADD_PROCESS.toString());
-		checkProcess.add(Utilities.button(saveButton, new Dimension(100, 30), "AGREGAR"));
+		checkProcess.add(Utilities.button(saveButton, new Dimension(100, 30), "Agregar"));
 		
 		this.add(checkProcess);
 	}

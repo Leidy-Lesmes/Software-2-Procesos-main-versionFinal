@@ -16,7 +16,7 @@ public class MenuBarReports extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 
 	private JMenu report;
-	private JMenuItem report2, report3, report4, report5, report6, report7,report8, report9, report10, report11;
+	private JMenuItem  report3, report4, report5, report6, report7,report8, report9, report10;
 	private JButton executeButton, closeApppButton;
 
 	public MenuBarReports(ActionListener actionListener) {
@@ -32,18 +32,11 @@ public class MenuBarReports extends JMenuBar {
 		executeButton = new JButton();
 		executeButton.addActionListener(actionListener);
 		executeButton.setActionCommand(Commands.C_EXECUTE_PROCESS.toString());
-		this.add(Utilities.button(executeButton, new Dimension(100, 30), "Execute"));
+		this.add(Utilities.button(executeButton, new Dimension(100, 30), "Ejecutar"));
 		
 		report = new JMenu(Constants.TOP_PANEL_MENU_PRINCIPAL_REPORT);
 		report.setFont(Constants.FONT_MENUBAR);
 		report.setForeground(Color.BLACK);
-
-		report2 = new JMenuItem(Constants.TOP_T_MENUITEM_REPORT2);
-		report2.setFont(Constants.FONT_MENUBAR);
-		report2.addActionListener(actionListener);
-		report2.setActionCommand(Commands.C_REPORT_FOR_STATUS_CHANGE_PROCESS.toString());
-		report.add(report2);
-		report.addSeparator();
 
 		report3 = new JMenuItem(Constants.TOP_T_MENUITEM_REPORT3);
 		report3.setFont(Constants.FONT_MENUBAR);
@@ -102,18 +95,12 @@ public class MenuBarReports extends JMenuBar {
 		report.add(report10);
 		report.addSeparator();
 
-		report11 = new JMenuItem(Constants.TOP_T_MENUITEM_REPORT11);
-		report11.setFont(Constants.FONT_MENUBAR);
-		report11.addActionListener(actionListener);
-		report11.setActionCommand(Commands.C_REPORT_FOR_STATUS_CHANGE.toString());
-		report.add(report11);
-		report.addSeparator();
 		
 		this.add(report);
 		
 		closeApppButton = new JButton();
 		closeApppButton.addActionListener(actionListener);
 		closeApppButton.setActionCommand(Commands.C_CLOSE_APP.toString());
-		this.add(Utilities.button(closeApppButton, new Dimension(100, 30), "Close"));
+		this.add(Utilities.button(closeApppButton, new Dimension(100, 30), "Cerrar"));
 	}
 }
